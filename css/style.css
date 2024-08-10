@@ -1,0 +1,762 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-optical-sizing: auto;
+    font-weight: 654;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: rgba(128, 128, 128, 0.5);
+    line-height: 150%;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    color: #3333;
+    overflow-x: hidden;
+  }
+
+.interface {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+
+header {
+    padding: 15px 6%;
+    background: linear-gradient(to right,rgb(85, 75, 92)0, #131313);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+header a {
+    color: #dfdfdf;
+    text-decoration: none;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+header a:hover {
+    color: #9727ff;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+@keyframes glow {
+0% {
+filter: brightness(100%);
+}
+50% {
+filter: brightness(120%);
+}
+100% {
+filter: brightness(100%);
+}
+}
+header .logo img {
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    animation: glow 2s infinite ease-in-out;
+}
+
+.skill {
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 60px;
+    background-color: rgb(185, 185, 185);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.skill-bar {
+    position: relative;
+    background-color: #333;
+    border-radius: 25px;
+    height: 40px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.skill-bar .skill-fill {
+    height: 100%;
+    border-radius: 25px;
+    width: 0;
+    transition: width 2s ease;
+}
+
+.skill-bar .skill-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* Cores para cada habilidade */
+.photoshop { background: linear-gradient(to right, #31A8FF, #1423f8)  }
+.blender { background: linear-gradient(to right, #ff6200, #ffbb00) }
+.premiere { background: linear-gradient(to right,#8400ff, #3300ff) }
+.illustrator { background: linear-gradient(to right, #ff0000, #ff6f00) }
+.html { background: linear-gradient(to right, #e44d26, #ee8523) }
+.css { background: linear-gradient(to right,#264de4, #0274b3) }
+.javascript { background: linear-gradient(to right,#f6ff00, rgb(199, 199, 32)) }
+.vegaspro { background: linear-gradient(to right, #46cec5, #00a6ff) }
+.neutralinojs { background: linear-gradient(to right,#1aff00, #008dd8) }
+
+#habilidades{
+    color:#7700ff;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    height: 195px;
+    font-size: 120px;
+    text-shadow: 0px 0px 42px #7700ff;
+    justify-content: center;
+    user-select: none;
+    padding: 100px;
+}
+
+header .btn-contato button {
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #313131;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 4px #ecf0f1;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+    user-select: none;
+}
+
+header .btn-contato button:hover {
+    background-color: #636363;
+    transform: scale(1.05);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: linear-gradient(135deg, #000000, #434343, #000000, #434343);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;  
+    transition: background 1s ease;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.hero h1{
+    font-size: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    user-select: none;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            display: flex;
+            width: 75px; 
+            height: 75px; 
+            background: url('/images/seta.png') no-repeat center center;
+            background-size: contain;
+            animation: bounce 1.5s infinite;
+            margin-top: 500px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            cursor: help; 
+            user-select: none;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            width: 120px; /* Ajuste conforme necessário */
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            bottom: 125%; /* Ajuste a posição conforme necessário */
+            left: 50%;
+            margin-left: -60px; /* Metade da largura do tooltip para centralizar */
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .scroll-indicator:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Ajuste a distância conforme necessário */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+.hero .btn-contato button {
+    font-size: 20px;
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+section {
+    padding: 60px 4%;
+    background-color: #ffffff;
+    transition: background-color 1s ease;
+}
+
+section:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeUp 1s ease-out;
+}
+
+section .flex {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background: linear-gradient(to right,#3f3f3f, #000000);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 4%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeUp 1s ease-out;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+#voltaraotopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; 
+    z-index: 1000;
+    opacity: 100;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+#voltaraotopo.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+#voltaraotopo img {
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s; 
+}
+
+#voltaraotopo img:hover {
+    opacity: 0.7; 
+}
+
+section.sobre{
+padding: 40px 4%;
+}
+section.sobre .flex{
+align-items: center;
+gap: 50px;
+}
+
+.sobre .txt-sobre{
+color: #000000;
+user-select: none;
+animation: fadeup 2s ease-in;
+}
+
+.sobre .txt-sobre h2{
+max-width: 100%;
+height: auto;
+font-size: 100px;
+line-height: 95px;
+margin-bottom: 30px;
+user-select: none;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+.sobre .txt-sobre h2 span{
+max-width: 100%;
+height: auto;
+color: #7700ff;
+font-size: 100px;
+text-shadow: 0px 0px 20px #7700ff;
+display: block;
+user-select: none;
+align-items: center;
+justify-content: center;
+animation: fadeup 2s ease-in;
+}
+
+.sobre .txt-sobre p{
+max-width: 100%;
+height: auto;
+font-size: 20px;
+margin: 30px 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+user-select: none;
+}
+.sobre .txt-sobre h3{
+max-width: 100%;
+height: auto;
+color: #000000;
+font-size: 70px;
+align-items: center;
+text-align: center;
+justify-content: center;
+display: flex;
+user-select: none;
+margin: 70px;
+text-shadow: 0px 0px 5px #000000;
+}
+
+.btn-social{
+max-width: 100%;
+height: auto;
+display: flex;
+gap: 5px;
+text-align: center;
+justify-content: center;
+
+
+}
+
+.button{
+display: block;
+width: 70px;
+height: 70px;
+background-size: cover;
+background-position: center;
+align-items: center;
+border-radius: 25px;
+transition: transform 0.3s;
+}
+
+.button:hover{
+transform: scale(1.10);
+}
+
+.imagem-portfolio img{
+width: 600px;
+max-width: 100%;
+height: auto;
+justify-content: center;
+position: relative;
+border: none;
+border-radius: 55px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+margin-bottom: 20px;
+margin: 5px;
+padding: 3px;
+pointer-events: visible; 
+-webkit-user-select: none; 
+-moz-user-select: none; 
+-ms-user-select: none; 
+user-select: none; 
+transition: transform 0.3s;
+}
+
+.imagem-portfolio img:hover {
+    transform: scale(1.02);
+}
+
+.portfolio strong{
+font-size: 70px;
+width: 900px;
+color: #7700ff;
+text-align: center;
+justify-content: center;
+align-items: center;
+text-shadow: 0px 0px 6px #7700ff;
+user-select: none;
+padding: 50px;
+}
+
+.projetos .interface strong{
+font-size: 75px;
+color: #313131;
+text-shadow: 0px 0px 5px #131313;
+text-align: center;
+justify-content: center;
+align-items: center;
+user-select: none;
+}
+
+.projetos .interface .projeto1 strong{
+color: #646464;
+text-shadow: 0px 0px 5px #131313;
+text-align: center;
+justify-content: center;
+align-items: center;
+user-select: none;
+margin: 100px;
+}
+
+.projetos .interface .projeto1 p{
+color: #4e4e4e;
+text-align: center;
+user-select: none;
+font-size: 20px;
+margin: -70px;
+}
+
+.fundoking{
+margin: 80px;
+width: 900px;
+filter: blur(1.0px);
+padding: 10px 20px;
+align-items: center;
+justify-content: center;
+text-align: center;
+border: none;
+border-radius: 100px;
+transition: transform 0.3s;
+}
+
+.fundoking:hover{
+transform: scale(1.02);
+}
+
+@font-face {
+font-family: 'Uni Sans Heavy';
+src: url(images/Fonte\ do\ Discord..otf) format('opentype');
+font-style: normal;
+}
+
+.discord-convite-button {
+font-family: 'Uni Sans Heavy', sans-serif;
+}
+
+.discord-convite-button {
+margin: -70px;
+margin-left: 310px;
+width: 350px;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+padding: 10px 20px;
+background-color: #7289da;
+color: #fff;
+text-decoration: none;
+border: none;
+border-radius: 35px;
+transition: all 0.3s ease;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transform: scale(1);
+}
+
+.discord-convite-button:hover {
+background-color: #6074c9;
+color:rgb(240, 240, 240);
+box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+transform: scale(1.05);
+}
+
+#kingsells {
+width: 100%;
+height: 100%;
+margin: 100px;
+border: none;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+margin-left: 10px;
+box-shadow: 0px 0px 8px #000000;
+}
+
+ul {
+list-style: none;
+}
+
+.example-2 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.example-2 .icon-content {
+margin: 0 10px;
+position: relative;
+}
+.example-2 .icon-content .tooltip {
+position: absolute;
+top: -30px;
+left: 50%;
+transform: translateX(-50%);
+color: #fff;
+padding: 6px 10px;
+border-radius: 5px;
+opacity: 0;
+visibility: hidden;
+font-size: 14px;
+transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+opacity: 1;
+visibility: visible;
+top: -50px;
+}
+.example-2 .icon-content a {
+position: relative;
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+color: #4d4d4d;
+background-color: #fff;
+transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+position: relative;
+z-index: 1;
+width: 30px;
+height: 30px;
+}
+.example-2 .icon-content a:hover {
+color: white;
+}
+.example-2 .icon-content a .filled {
+position: absolute;
+top: auto;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 0;
+background-color: #000;
+transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+background-color: #24262a;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+background: linear-gradient(
+45deg,
+#405de6,
+#5b51db,
+#b33ab4,
+#c135b4,
+#e1306c,
+#fd1f1f
+);
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+background-color: #ff0000;
+}
+
+@media screen and (max-width: 430px) {
+.interface {
+display: block;
+background-image: none;
+}
+
+.hero{
+position: relative;
+}
+
+.hero h1{
+margin-left: 10px;
+text-align: center;
+justify-content: center;
+font-size: 3.08rem;
+line-height: 40px;
+
+}
+
+
+
+#habilidades{
+justify-content: center;
+text-align: center;
+font-size: 4rem;
+margin: -55px;
+}
+
+#Habilidades img{
+display: flex;
+    width: 105%;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: -180px;
+    margin-left: 1px;
+}
+
+.txt-sobre h2{
+font-size: 0px;
+
+}
+}
+
+.menu-pc{
+    font-size: 1rem;
+    text-align: center;
+    text-align: justify;
+    justify-content: center;
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    -webkit-border-radius: 12px;
+    width: 10px;
+    background: linear-gradient(180deg, #000000, #3a3a3a9a);
+    border: 1px solid #F7FBFF
+}
+
+::-webkit-scrollbar-thumb:hover{
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #262626, #3a3a3a9a);
+    border: 1px solid #F7FBFF;
+    box-shadow: 10px #000000,
+}
+
+::-webkit-scrollbar-track{
+    background: #F7FBFF;
+}
+
